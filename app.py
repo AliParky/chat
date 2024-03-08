@@ -9,8 +9,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 socketio = SocketIO(app)
 
-messages = []
-
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
@@ -23,7 +21,9 @@ def home():
 
 @socketio.on('message')
 def handle_message(data):
-    messages.append(data)
+    message = Message(content=data['message'])
+    db.session.add(message)
+    db.session.commit()
     emit('new_message', data, broadcast=True)
 
 if __name__ == '__main__':
