@@ -16,8 +16,9 @@ class Message(db.Model):
 db.create_all()
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def index():
+    messages = Message.query.order_by(Message.id.desc()).limit(50).all()  # Fetch recent messages
+    return render_template('index.html', messages=messages)
 
 @socketio.on('message')
 def handle_message(data):
