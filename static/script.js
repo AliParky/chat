@@ -4,6 +4,8 @@ const socket = io();
 const messagesList = document.getElementById('messages');
 
 messageForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent page reload on form submission
+
     const message = messageInput.value;
     messageInput.value = ''; // Clear the input field
 
