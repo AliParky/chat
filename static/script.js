@@ -1,6 +1,11 @@
 // Establish Socket.IO Connection
 const socket = io();
 
+// Get references to the form and the input field
+const messageForm = document.getElementById('message_form');
+const messageInput = document.getElementById('message_input');
+
+// Get reference to the messages list element
 const messagesList = document.getElementById('messages');
 
 messageForm.addEventListener('submit', (event) => {
