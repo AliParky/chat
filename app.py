@@ -28,4 +28,4 @@ def handle_message(data):
     emit('new_message', data, broadcast=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app, debug=True)
