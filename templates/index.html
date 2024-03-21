@@ -6,7 +6,12 @@
         <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     </head>
     <body>
-        <ul id="messages"></ul>
+        <ul id="messages">
+            <!-- Loop through the messages and display them -->
+            {% for message in messages %}
+                <li>{{ message.content }}</li>
+            {% endfor %}
+        </ul>
         <form id="message_form">
             <input type="text" id="message_input">
             <button type="submit">Send</button>
