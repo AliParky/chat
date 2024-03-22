@@ -18,7 +18,7 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    messages = Message.query.order_by(Message.id.desc()).limit(50).all()  # Fetch recent messages
+    messages = Message.query.order_by(Message.id).all()  # Fetch recent messages
     return render_template('index.html', messages=messages)
 
 @socketio.on('message')
