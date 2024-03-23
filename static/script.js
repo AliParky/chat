@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     socket.on('new_message', (data) => {
         const newMessage = document.createElement('li');
         newMessage.textContent = data.message;
-        messagesList.prepend(newMessage); // Add new messages to the top
+        messagesList.appendChild(newMessage); // Add new messages to the end
     });
 });
