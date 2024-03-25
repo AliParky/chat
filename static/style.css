@@ -1,0 +1,6 @@
+/* Chat messages container */
+#messages {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
