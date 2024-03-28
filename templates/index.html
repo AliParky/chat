@@ -10,7 +10,10 @@
         <ul id="messages">
             <!-- Loop through the messages and display them -->
             {% for message in messages %}
-                <li>{{ message.content }}</li>
+                <li>
+                    <span class="username">{{ message.username }}:</span>
+                    <span class="content">{{ message.content }}</span>
+                </li>
             {% endfor %}
         </ul>
         <form id="message_form">
