@@ -24,7 +24,7 @@ def index():
 
 @socketio.on('message')
 def handle_message(data):
-    message = Message(content=data['message'])
+    message = Message(username=data['username'], content=data['message'])
     db.session.add(message)
     db.session.commit()
     emit('new_message', data, broadcast=True)
