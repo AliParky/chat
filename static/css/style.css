@@ -3,4 +3,21 @@
     list-style-type: none;
     padding: 10px;
     background-color: #f2f2f2;
+    height: 80vh;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+/* Chat message */
+#messages li {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e9e9e9;
+}
+
+/* Username styling */
+.username {
+    font-weight: bold;
+    color: #333;
 }
