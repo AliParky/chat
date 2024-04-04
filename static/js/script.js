@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Receive New Messages
     socket.on('new_message', (data) => {
         const newMessage = document.createElement('li');
-        newMessage.textContent = `${data.username}: ${data.message}`;
+        newMessage.innerHTML = `<span class="username">${data.username}:</span> <span class="content">${data.message}</span>`;
         messagesList.appendChild(newMessage); // Add new messages to the end
     });
 });
